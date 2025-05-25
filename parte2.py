@@ -1,6 +1,11 @@
 from math import gcd
-import openpyxl
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
 #1y2
+#Decidimos evaluar la restricción de que el mcd de a y m fuera igual a 1 y que la semilla perteneciera a los numeros naturales
+
 def algoritmoPseudoaleatorio(a, c ,m, cantSimulaciones):
     x = 10
     semilla : int = int(x)
@@ -16,5 +21,15 @@ def algoritmoPseudoaleatorio(a, c ,m, cantSimulaciones):
     
 muestra = algoritmoPseudoaleatorio(117, 223, 200, 100)
 print(muestra)
+
+#Usamos Matplot y Seaborn para hacer el histograma de los datos, junto con su curva de densidad.
+plt.hist(muestra, bins=15, color='blue', edgecolor='black', density=True)
+sns.kdeplot(muestra, bw_adjust=0.5, color='red', label='Densidad estimada', fill=True)
+plt.xticks(np.linspace(0,1, 21))
+plt.xlabel('Valor')
+plt.ylabel('Frecuencia')
+plt.title('Histograma')
+
+plt.show()
 
 
