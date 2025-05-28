@@ -24,12 +24,11 @@ print(muestra)
 
 #Usamos Matplot y Seaborn para hacer el histograma de los datos, junto con su curva de densidad.
 plt.hist(muestra, bins=15, color='blue', edgecolor='black', density=True)
+#Density= true normaliza el gráfico, esto es porque seaborn hace la curva de densidad de acurdo a la gráfica normalizada
 sns.kdeplot(muestra, bw_adjust=0.5, color='red', label='Densidad estimada', fill=True)
 plt.xticks(np.linspace(0,1, 21))
 plt.xlabel('Valor')
 plt.ylabel('Frecuencia')
 plt.title('Histograma')
-
+plt.legend()
 plt.show()
-
-
