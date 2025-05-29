@@ -5,13 +5,16 @@ import numpy as np
 from math import gcd
 
 def algoritmoPseudoaleatorio(a, c, m, cantSimulaciones):
-    semilla = 10
+    x = 1550
+    semilla : int = int(x)
     if gcd(a, m) == 1 and semilla > 0:
         resultados = []
-        for i in range(cantSimulaciones):
-            semilla = (a * semilla + c) % m
-            resultado = semilla / m
+        while cantSimulaciones > 0:
+            x = (a * semilla + c) % m
+            semilla = x
+            resultado = x / m
             resultados.append(resultado)
+            cantSimulaciones -= 1
         return resultados
     else:
         print("Error: parámetros inválidos")

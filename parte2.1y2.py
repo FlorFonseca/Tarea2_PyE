@@ -7,7 +7,7 @@ import seaborn as sns
 #Decidimos evaluar la restricción de que el mcd de a y m fuera igual a 1 y que la semilla perteneciera a los numeros naturales
 
 def algoritmoPseudoaleatorio(a, c ,m, cantSimulaciones):
-    x = 10
+    x = 1550
     semilla : int = int(x)
     if gcd(a, m) == 1 and semilla > 0:
         resultados = []
@@ -18,6 +18,9 @@ def algoritmoPseudoaleatorio(a, c ,m, cantSimulaciones):
             resultados.append(resultado)
             cantSimulaciones -= 1
         return resultados
+    else:
+        print("Error: parámetros inválidos")
+        return []
     
 muestra = algoritmoPseudoaleatorio(117, 223, 200, 100)
 print(muestra)
