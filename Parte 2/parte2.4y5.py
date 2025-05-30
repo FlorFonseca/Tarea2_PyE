@@ -2,6 +2,7 @@ import math
 import matplotlib.pyplot as plt
 import numpy as np
 from math import gcd
+import seaborn as sns
 
 def algoritmoPseudoaleatorio(a, c, m, cantSimulaciones):
     x = 1550
@@ -37,6 +38,7 @@ plt.hist(muestra_cauchy, bins=30, density=True, color='orange', edgecolor='black
 x_vals = np.linspace(-10, 10, 1000)
 y_vals = [densidad_cauchy(x) for x in x_vals]
 plt.plot(x_vals, y_vals, color='blue', label='Densidad teórica Cauchy')
+sns.kdeplot(muestra_cauchy, bw_adjust=0.5, color='red', label='Densidad estimada', fill=True)
 plt.title("Distribución Cauchy estándar (muestra de 100)")
 plt.xlabel("Valor")
 plt.ylabel("Densidad")
