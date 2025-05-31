@@ -113,12 +113,13 @@ def crear_graficos(datos, valores, frecuencias, dist_acumulada, stats):
     
     plt.tight_layout()
 
-datos = leer_datos()
-valores, frecuencias = calcular_frecuencias(datos)
-prob_empiricas = calcular_probabilidades_empiricas(frecuencias, len(datos))
-dist_acumulada = calcular_distribucion_acumulada(prob_empiricas)
-stats = calcular_estadisticas(datos)
+if __name__ == '__main__':
+    datos = leer_datos()
+    valores, frecuencias = calcular_frecuencias(datos)
+    prob_empiricas = calcular_probabilidades_empiricas(frecuencias, len(datos))
+    dist_acumulada = calcular_distribucion_acumulada(prob_empiricas)
+    stats = calcular_estadisticas(datos)
 
-mostrar_resultados(valores, frecuencias, prob_empiricas, dist_acumulada, stats)
-crear_graficos(datos, valores, frecuencias, dist_acumulada, stats)
-plt.show() 
+    mostrar_resultados(valores, frecuencias, prob_empiricas, dist_acumulada, stats)
+    crear_graficos(datos, valores, frecuencias, dist_acumulada, stats)
+    plt.show()
