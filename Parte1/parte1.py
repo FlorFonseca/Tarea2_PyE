@@ -3,18 +3,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 def leer_datos():
-    """
-    NOTA: Se detectó una inconsistencia en la visualización de datos.
-    Los valores que aparecen como "1" en herramientas como Excel, corresponden 
-    realmente a "10" cancelaciones en esta simulacion. Este código procesa los valores tal como 
-    aparecen en el archivo .csv para Visual Studio Code.
-    """
     #devolver lista de numeros apartir de archivo csv
     datos = []
     with open('cancelaciones.csv', 'r') as f:
         next(f)  
         for linea in f:
-            datos.append(int(linea.strip().split(',')[1]))
+            datos.append(int(float(linea.strip().split(',')[1])))
     return np.array(datos)
 
 def calcular_frecuencias(datos):
