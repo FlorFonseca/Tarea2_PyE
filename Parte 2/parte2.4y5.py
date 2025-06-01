@@ -33,6 +33,9 @@ def densidad_cauchy(x):
 uniformes = algoritmoPseudoaleatorio(1664525, 1013904223, 4294967296, 100)
 muestra_cauchy = transformar_a_cauchy(uniformes)
 
+print("Muestra Cauchy:")
+print(muestra_cauchy)
+
 plt.figure(figsize=(10, 6))
 plt.hist(muestra_cauchy, bins=30, density=True, color='orange', edgecolor='black', label='Muestra simulada')
 x_vals = np.linspace(-10, 10, 1000)
